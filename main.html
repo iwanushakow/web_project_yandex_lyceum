@@ -5,50 +5,13 @@
         <title>Main page</title>
     </head>
     <body>
-      nnbncbxmvbxmcvnm
       <a href="registration/registration.html">Register   </a>
       <a href="sign_in/sign_in.html">sign in</a><br /><br />
-    <?php
-        function name ($set){
-          $name = "";
-          while (($row = $set->fetch_assoc()) != false){
-              $name = $row["user_nick"];
-            }
-          return $name;
-        }
-        function get_all ($set){
-          $mysqli = new mysqli ("localhost", "root", "", "incubatya");
-          $mysqli->query ("SET NAMES 'utf8'");    
-          $heads = array();
-          $texts = array();
-          $times = array();
-          $users = array();
-          do{
-            $heads[] = $row["post_headline"];
-            $texts[] = $row["post_text"];
-            $times[] = $row["post_date"];
-            $id = $row["user_id"];
-            $users[] = name($mysqli->query ("SELECT * FROM users WHERE user_id='$id'"));
-          } while (($row = $set->fetch_assoc()) != false);
-          return array($heads, $texts, $times, $users);
-        }
-        $mysqli = new mysqli ("localhost", "root", "", "incubatya");
-        $mysqli->query ("SET NAMES 'utf8'");
-        $list = $mysqli->query ("SELECT * FROM posts");
-        $list = get_all($list);
-        $heads = $list[0];
-        $text = $list[1];
-        $time = $list[2];
-        $user = $list[3];
-        for ($i = 1; $i < count($user); $i++){
-        }
-        for ($i = 1; $i < count($text); $i++){
-            $name = iconv ('UTF-8', 'CP1251', $user[$i]);
-            echo $name."<br />";
-            echo $heads[$i]."<br />";
-            echo "<textarea rows=10 cols=30 placeholder='$text[$i]' readonly></textarea>   ";
-            echo $time[$i]."<br /><br />";
-        }
-    ?>
+    {% for post in lst %}
+      <p>{{post[0]}}</p><br>
+      <label>{{post[1]}}</label><br>
+      <textarea rows=10 cols=30 placeholder={{post[2]}} readonly></textarea>
+      <label>{{strftime(post[3])}}</label>
+    {% endfor %}
     </body>
 </html>
