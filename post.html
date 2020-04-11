@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>site</title>
+</head>
+<body>
+    <h1>publicating a post</h1>
+    <form name="registration" method="post">
+        <label>Enter mail here</label><br>
+        <input type="text" name="mail"><br>
+        <label>Enter post heading</label><br />
+        <input type="text" name="post_head"><br />
+        <label>Enter text here</label><br />
+        <textarea name="post_text" cols="30" rows="10"></textarea>
+        <span style="color: rgb(194, 38, 38)"><?=$error?></span><br />
+        <input type="submit" name="button" value="publicate">
+    </form>
+</body>
+</html>
