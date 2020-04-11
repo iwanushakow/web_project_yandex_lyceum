@@ -1,0 +1,28 @@
+html {
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+a:link {
+    color: #497DDD; 
+}
+a:visited {
+    color: #EF7D55;
+}
+a:hover {
+    color: #154088; 
+    border-bottom: .07em solid;
+}
+a:active {
+    color: #497DDD; 
+}
+a {text-decoration: none;}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 5px 10px;
+    letter-spacing: 1px;
+    margin: 0 20px;
+    font-size: 24px;
+    font-family: 'Fredoka One', cursive;
+    transition: .3s ease-in;
+}ы
