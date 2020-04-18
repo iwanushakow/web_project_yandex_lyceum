@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="Comments.css">
+    <title>Comments</title>
+</head>
+<body>
+    <h2>Comments of choosen post</h2>
+    <form name="comment" method="post">
+      <p>
+        <label>Name:</label>
+        <input type="text" name="name"/>
+      </p>
+        <select name="like_or_dislike">
+            echo "<option value='like'>Like</option>";
+            echo "<option value='dislike'>Dislike</option>";
+            </select><br />
+      <p>
+        <label>Comment:</label><br />
+        <textarea name="text_comment" cols="30" rows="10"></textarea>
+      </p>
+      <p>
+        <input type="submit" value="Submit"/>
+      </p>
+        {% for post in lst %}
+            <p>{{post[0]}}</p><br>
+            <textarea rows=10 cols=30 placeholder={{post[1]}} readonly></textarea>
+            <label>{{strftime(post[2])}}</label>
+        {% endfor %}
+    </form>
+</body>
