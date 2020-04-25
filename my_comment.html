@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="comment.css">
+    <title>Comments</title>
+</head>
+<body>
+    <a href='/profile'>profile</a>
+    <h3>Comments:</h3>
+    {% for post in lst %}
+    <p>{{post[0]}}</p>
+    <textarea rows=10 cols=20 placeholder={{post[1]}} readonly></textarea>
+    <label>{{post[2]}}</label>
+    {% endfor %}
+</body>
