@@ -1,0 +1,56 @@
+html {
+    background-color: rgb(32, 32, 32);
+    text-align: center;
+    color: white;
+}
+label {
+    display: block;
+}
+h2 {
+    text-align: center;
+    font-style: oblique;
+}
+input[type="text"] {
+    padding-left: 12px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: rgb(32, 32, 32) !important;
+    outline: none;
+    height: 30px;
+    width: 500px;
+    color: white;
+    font-size: 14px;
+    font-family: Calibri;
+}
+input[type="text"]:focus {
+    color: white;
+    border: 1px solid blue
+}
+input[type="password"] {
+    padding-left: 12px;
+    border: 1px solid ;
+    border-radius: 3px;
+    background: rgb(32, 32, 32) !important;
+    outline: none;
+    height: 30px;
+    width: 500px;
+    color: white;
+    font-size: 14px;
+    font-family: Calibri;
+}
+input[type="password"]:focus {
+    color: white;
+    border: 1px solid blue
+}
+input[type="submit"] {
+    font-weight: bold;
+    padding: 16px 30px;
+    color: black;
+    background: rgb(216, 216, 216);
+}
+input[type='submit']:hover {
+    background: #bbbbbb; 
+}
+input[type='submit']:active {
+    background: #828282; 
+}

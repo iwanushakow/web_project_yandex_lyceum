@@ -345,22 +345,20 @@ def main():
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():
     if current_user.is_signed_in():
-        if request.form.get('post'):
-            response = redirect('/post')
-            return response
-        elif request.form.get('composition'):
-            response = redirect('/composition')
-            return response
-        elif request.form.get('work'):
-            response = redirect('/my_works')
-            return response
         nick = current_user.nick()
         lst = get_posts(current_user.id())
         if request.method == 'GET':
             dictionary = dict(request.args)
             if len(dictionary) > 0:
-                post_id = dictionary['comment'].split('-')[0].split()[-1]
-                return redirect(f'/my_comments/{post_id}')
+                if 'composition' in dictionary.keys():
+                    return redirect('/composition')
+                elif 'post' in dictionary.keys():
+                    return redirect('/post')
+                elif 'work' in dictionary.keys():
+                    return redirect('/my_works')
+                elif 'comment' in dictionary.keys():
+                    post_id = dictionary['comment'].split('-')[0].split()[-1]
+                    return redirect(f'/my_comments/{post_id}')
         return render_template('profile/profile.html', nick=nick, lst=lst)
     else:
         return render_template('not_logged_in/main.html')
