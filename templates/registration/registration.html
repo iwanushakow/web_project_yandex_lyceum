@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registartion</title>
+</head>
+<body>
+<h2>Registration</h2>
+<form name="registration" action="" method="post">
+    <label>Enter your email adress: </label><br/>
+    <input type="text" name="mail"/><br/>
+    <span style="color:red">{{error_mail}}</span><br/>
+    <label>Enter your full name(for copyrights): </label><br/>
+    <input type="text" name="name"/><br/>
+    <span style="color:red">{{error_name}}</span><br/>
+    <label>Enter password: </label><br/>
+    <input type="password" name="pass1"/><br/>
+    <span style="color:red">{{error_pass1}}</span><br/>
+    <label>And one more time: </label><br/>
+    <input type="password" name="pass2"/><br/>
+    <span style="color:red">{{error_pass2}}</span><br/>
+    <label>Enter a code word(in case you forget your password): </label><br/>
+    <input type="text" name="code_word"><br/>
+    <span style="color:red">{{error_code_word}}</span><br/>
+    <input type="submit" name="button" value="Submit"/><br/>
+</form>
+</body>
+</html>

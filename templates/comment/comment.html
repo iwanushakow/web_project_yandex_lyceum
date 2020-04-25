@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="comment.css">
+    <title>Comments</title>
+</head>
+<body>
+    <form name="comment" method="post">
+        <select name="type">
+            <option value='like'>Like</option>
+            <option value='dislike'>Dislike</option>
+        </select><br />
+        <label>Comment:</label><br />
+        <textarea name="text" cols="30" rows="10"></textarea>
+        <input type="submit" name="Submit" value="Submit"/><br><br><br>
+    </form>
+    <h3>Other comments:</h3>
+    {% for post in lst %}
+    <p>{{post[0]}}</p>
+    <textarea rows=10 cols=20 placeholder={{post[1]}} readonly></textarea>
+    <label>{{post[2]}}</label>
+    {% endfor %}
+</body>

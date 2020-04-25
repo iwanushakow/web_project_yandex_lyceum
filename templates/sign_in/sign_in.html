@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sing in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Sign in</h2>
+	<form name="Enter" action="" method="post">
+	    <label>Enter your email: </label><br />
+        <input type="text" name="mail"/><br />
+		<span style="color:red">{{error_mail}}</span><br />
+		<label>Enter your password: </label><br />
+		<input type="password" name="password"><br />
+		<span style="color:red">{{error_password}}</span><br />
+		<input type="submit" name="button" value="Enter"/><br />
+    </form>
+</body>
+</html>

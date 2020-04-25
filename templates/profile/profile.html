@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <a href="/main_page">Main page</a>
+        <h1 align="center">{{nick}}</h1>
+        <input type="submit" name="composition" value="Create a composition">
+        <input type="submit" name="post" value="Create a post">
+        <input type="submit" name="work" value="My works"><br>
+        <h2 align="center">Posts</h2>
+        {% for i in lst %}
+            <label>{{i[1]}}</label><br/>
+            <textarea rows=10 cols=30 placeholder={{i[2]}} readonly></textarea>
+            <label>{{i[3]}}</label><br>
+            <input type="submit" name="comment" value="Зацени комменты к {{i[4]}}-му посту"><br><br>
+        {% endfor %}
+    </form>
+</body>
+</html>

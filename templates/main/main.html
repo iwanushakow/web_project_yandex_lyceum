@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "utf8" />
+        <title>Main page</title>
+    </head>
+    <body>
+      <a href="/profile">Profile</a>
+    {% for post in lst %}
+      <form>
+          <p>{{post[0]}}</p>
+          <label>{{post[1]}}</label><br>
+          <textarea rows=10 cols=30 placeholder={{post[2]}} readonly></textarea>
+          <label>{{post[3]}}</label><br>
+          <input type="submit" name="comment" value='Комментировать пост ( тут поставить рандомный номер, например {{post[4]}} )'>
+      </form>
+    {% endfor %}
+    </body>
+</html>
