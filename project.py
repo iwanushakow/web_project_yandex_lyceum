@@ -372,8 +372,6 @@ def composition():
             if not os.path.exists(self.PATH_TO_DATA + 'SAMPLE/'):
             os.makedirs(self.PATH_TO_DATA + 'SAMPLE/')
             path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-            if not os.path.exists(app.config['UPLOAD_FOLDER']):
-                os.makedirs(app.config['UPLOAD_FOLDER'])
             file.save(path)
             add_work(current_user.id(), 'пока без этого', path, request.form.get('name'))
             return redirect('/profile')
